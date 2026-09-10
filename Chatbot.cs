@@ -26,15 +26,21 @@ private readonly AsciiArt asciiArt;
     StartConversation();
 }
 
-    private void DisplayWelcome()
-    {
-        Console.WriteLine("========================================");
-        Console.WriteLine("       CYBERSAFE AWARENESS BOT");
-        Console.WriteLine("========================================");
-        Console.WriteLine();
-        Console.WriteLine("Welcome! I am your Cybersecurity Awareness Bot.");
-        Console.WriteLine();
-    }
+ private void DisplayWelcome()
+{
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.WriteLine("========================================");
+    Console.WriteLine("       CYBERSAFE AWARENESS BOT");
+    Console.WriteLine("========================================");
+    Console.ResetColor();
+
+    Console.WriteLine();
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("Bot: Welcome! I am your Cybersecurity Awareness Bot.");
+    Console.ResetColor();
+
+    Console.WriteLine();
+}
 
     private void GetUserName()
     {
@@ -51,16 +57,31 @@ private readonly AsciiArt asciiArt;
         userProfile.Name = name;
     }
 
- private void DisplayPersonalisedWelcome()
+private void DisplayPersonalisedWelcome()
 {
     Console.WriteLine();
-    Console.WriteLine($"Hello, {userProfile.Name}! Welcome to CyberSafe Awareness Bot.");
-    Console.WriteLine("I can help you learn about basic cybersecurity topics.");
+
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.WriteLine("----------------------------------------");
+    Console.WriteLine("              GET STARTED");
+    Console.WriteLine("----------------------------------------");
+    Console.ResetColor();
+
+    Console.WriteLine();
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine($"Bot: Hello, {userProfile.Name}! Welcome to CyberSafe Awareness Bot.");
+    Console.WriteLine("Bot: I can help you learn about basic cybersecurity topics.");
+    Console.ResetColor();
+
     Console.WriteLine();
     Console.WriteLine("You can ask me about:");
-    Console.WriteLine("- Password safety");
-    Console.WriteLine("- Phishing");
-    Console.WriteLine("- Safe browsing");
+
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.WriteLine("  • Password safety");
+    Console.WriteLine("  • Phishing");
+    Console.WriteLine("  • Safe browsing");
+    Console.ResetColor();
+
     Console.WriteLine();
 }
 
@@ -68,25 +89,35 @@ private void StartConversation()
 {
     while (true)
     {
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.Write("You: ");
+        Console.ResetColor();
+
         string question = Console.ReadLine() ?? "";
 
         if (string.IsNullOrWhiteSpace(question))
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Bot: Please enter a question.");
+            Console.ResetColor();
             Console.WriteLine();
             continue;
         }
 
         if (question.ToLower() == "exit")
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Bot: Goodbye, {userProfile.Name}! Stay safe online.");
+            Console.ResetColor();
             break;
         }
 
         string response = responseHandler.GetResponse(question);
 
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine($"Bot: {response}");
+        Console.ResetColor();
+
         Console.WriteLine();
     }
 }
