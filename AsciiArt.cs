@@ -2,6 +2,7 @@ namespace CyberSafeAwarenessBot;
 
 public class AsciiArt
 {
+    // Displays the chatbot header.
     public void Display()
     {
         Console.WriteLine("========================================");
