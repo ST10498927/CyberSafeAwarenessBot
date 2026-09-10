@@ -3,18 +3,25 @@ namespace CyberSafeAwarenessBot;
 public class Chatbot
 {
     private readonly UserProfile userProfile;
+    private readonly VoiceGreeting voiceGreeting;
+private readonly AsciiArt asciiArt;
 
     public Chatbot()
     {
         userProfile = new UserProfile();
+        voiceGreeting = new VoiceGreeting();
+        asciiArt = new AsciiArt();
     }
 
-    public void Start()
-    {
-        DisplayWelcome();
-        GetUserName();
-        DisplayPersonalisedWelcome();
-    }
+  public void Start()
+{
+    voiceGreeting.PlayGreeting();
+    asciiArt.Display();
+
+    DisplayWelcome();
+    GetUserName();
+    DisplayPersonalisedWelcome();
+}
 
     private void DisplayWelcome()
     {
