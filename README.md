@@ -2,7 +2,8 @@
 
 ## Student
 
-Name: Msekeli Mkwibiso  
+Name: Msekeli Mkwibiso
+
 Student Number: ST10498927
 
 ## Project Description
@@ -49,4 +50,5 @@ CyberSafeAwarenessBot/
 ├── UserProfile.cs
 ├── VoiceGreeting.cs
 ├── CyberSafeAwarenessBot.csproj
-└── README.md
+├── README.md
+└── ci-success.png
