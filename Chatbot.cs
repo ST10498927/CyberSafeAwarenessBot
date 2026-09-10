@@ -13,15 +13,12 @@ private readonly AsciiArt asciiArt;
         asciiArt = new AsciiArt();
     }
 
-  public void Start()
-{
-    voiceGreeting.PlayGreeting();
-    asciiArt.Display();
-
-    DisplayWelcome();
-    GetUserName();
-    DisplayPersonalisedWelcome();
-}
+    public void Start()
+    {
+        DisplayWelcome();
+        GetUserName();
+        DisplayPersonalisedWelcome();
+    }
 
     private void DisplayWelcome()
     {
@@ -48,11 +45,16 @@ private readonly AsciiArt asciiArt;
         userProfile.Name = name;
     }
 
-    private void DisplayPersonalisedWelcome()
-    {
-        Console.WriteLine();
-        Console.WriteLine($"Hello, {userProfile.Name}! Welcome to CyberSafe Awareness Bot.");
-        Console.WriteLine("I can help you learn about basic cybersecurity topics.");
-        Console.WriteLine();
-    }
+  private void DisplayPersonalisedWelcome()
+{
+    Console.WriteLine();
+    Console.WriteLine($"Hello, {userProfile.Name}! Welcome to CyberSafe Awareness Bot.");
+    Console.WriteLine("I can help you learn about basic cybersecurity topics.");
+    Console.WriteLine();
+    Console.WriteLine("You can ask me about:");
+    Console.WriteLine("- Password safety");
+    Console.WriteLine("- Phishing");
+    Console.WriteLine("- Safe browsing");
+    Console.WriteLine();
+}
 }
